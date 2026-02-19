@@ -41,8 +41,7 @@ if [ "${BASE_DISTRO}" = "ubuntu" ]; then
 else
     # Default image raspbian
     if [ "${BASE_DISTRO}" == "raspios64" ] && [ "${BASE_BOARD}" == "raspberrypiarm64" ]; then
-        [ -n "$BASE_ZIP_IMG" ] || BASE_ZIP_IMG=$(ls -t $BASE_IMAGE_PATH/*-{raspbian,raspios}-*-arm64-*.{zip,7z,xz} | head -n 1)
-    else
+        [ -n "$BASE_ZIP_IMG" ] || BASE_ZIP_IMG=$(ls -t $BASE_IMAGE_PATH/*-{raspbian,raspios}-*-arm64-*.{zip,7z,xz} $BASE_IMAGE_PATH/*-{raspbian,raspios}-*-arm64*.{zip,7z,xz} 2>/dev/null | head -n 1)    else
         [ -n "$BASE_ZIP_IMG" ] || BASE_ZIP_IMG=$(ls -t $BASE_IMAGE_PATH/*-{raspbian,raspios}*.{zip,7z,xz} | head -n 1)
     fi
     # Default user raspbian
