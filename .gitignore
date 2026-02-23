@@ -1,5 +1,5 @@
 src/config.local
 src/image/*.zip
 src/image/*.xz
-src/custompios/__pycache__
+src/custompios/__pycache__/*
 **/key.json
